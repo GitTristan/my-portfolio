@@ -10,6 +10,9 @@ export const profile = {
   // overrides it, which is only useful for testing previews on another host.
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://parrish.work",
   linkedin: "https://www.linkedin.com/in/tristan-parrish",
+  // The PDF in /public that the hero's download button serves. To update the
+  // resume, replace that file and keep the name.
+  resume: "/Tristan_Parrish_Resume.pdf",
   description:
     "Full-stack developer and cybersecurity professional relocating to Nashville, Tennessee. Web applications, identity and access management, and application security.",
   about: [

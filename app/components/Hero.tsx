@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MapPinIcon } from "@heroicons/react/20/solid";
+import { ArrowDownTrayIcon, MapPinIcon } from "@heroicons/react/20/solid";
 import { highlights, profile } from "../data/profile";
 import { LinkedInIcon } from "./icons";
 import SectionLink from "./SectionLink";
@@ -37,6 +37,14 @@ export default function Hero() {
               >
                 View Work
               </SectionLink>
+              <a
+                href={profile.resume}
+                download
+                className="border-hairline-strong bg-background hover:border-primary hover:text-primary inline-flex items-center gap-x-2 rounded border px-6 py-3 text-sm font-bold tracking-wider transition-colors"
+              >
+                Download Resume
+                <ArrowDownTrayIcon aria-hidden="true" className="size-4" />
+              </a>
             </div>
 
             <ul className="text-muted mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm">
