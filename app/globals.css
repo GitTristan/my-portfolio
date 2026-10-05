@@ -1,26 +1,114 @@
 @import "tailwindcss";
 
+/* `dark:` utilities follow the theme on <html>, not the system setting
+   directly, so they stay in step with the navbar's Light / Dark switch. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --background: #f6f7f5;
+  /* Cards and panels that sit on the page ground. */
+  --surface: #ffffff;
+  --foreground: #10151b;
+  --muted: #56616d;
+  /* Accent: links, numerals, icons, the call to action. */
+  --primary: #0f6b55;
+  /* Accent hover. Goes darker on the light theme, lighter on the dark one. */
+  --primary-hover: #0a5241;
+  /* Text that sits on the accent color. */
+  --on-primary: #f6f7f5;
+  --hairline: rgb(16 21 27 / 0.1);
+  --hairline-soft: rgb(16 21 27 / 0.04);
+  --hairline-strong: rgb(16 21 27 / 0.18);
+}
+
+/* `data-theme` is set on <html> before first paint by the inline script in
+   app/layout.tsx: the visitor's saved choice, or their system preference when
+   they have not made one. See app/lib/theme.ts. */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #0b0f14;
+  --surface: #11161d;
+  --foreground: #e7ebf0;
+  --muted: #94a0b0;
+  --primary: #7fd8be;
+  --primary-hover: #a6e6d3;
+  --on-primary: #0b0f14;
+  --hairline: rgb(255 255 255 / 0.1);
+  --hairline-soft: rgb(255 255 255 / 0.05);
+  --hairline-strong: rgb(255 255 255 / 0.2);
+}
+
+/* While the theme is being swapped, transitions are switched off so every
+   color changes in the same frame. The switch itself is exempt so its thumb
+   still slides across. */
+.theme-switching *:not(.theme-toggle, .theme-toggle *) {
+  transition: none !important;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-on-primary: var(--on-primary);
+  --color-hairline: var(--hairline);
+  --color-hairline-soft: var(--hairline-soft);
+  --color-hairline-strong: var(--hairline-strong);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+}
+
+/* Anchor targets stop short of the top so a section's top border tucks in
+   behind the fixed navbar instead of doubling up with the navbar's own. The
+   section's padding keeps its heading clear of the bar. */
+[id] {
+  scroll-margin-top: 3rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Faint drafting grid behind the hero, faded out toward the bottom edge so it
+   never competes with the text. Line color follows the theme's hairline. */
+.grid-backdrop {
+  background-image:
+    linear-gradient(to right, var(--hairline) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--hairline) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 90% 75% at 50% 0%,
+    black 30%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 90% 75% at 50% 0%,
+    black 30%,
+    transparent 100%
+  );
 }
