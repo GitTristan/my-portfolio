@@ -32,7 +32,7 @@ export const profile = {
 export const highlights = [
   {
     value: "4+ years",
-    label: "Designing and building websites for businesses",
+    label: "Building websites, applications, and tools for businesses",
   },
   {
     value: "Bachelor's",
