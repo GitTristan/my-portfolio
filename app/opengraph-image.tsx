@@ -41,9 +41,6 @@ export default function Image() {
         <div style={{ marginTop: 12, fontSize: 40, color: "#7fd8be" }}>
           {profile.title}
         </div>
-        <div style={{ marginTop: 28, fontSize: 28, color: "#94a0b0" }}>
-          {profile.location}
-        </div>
       </div>
     </div>,
     { ...size },

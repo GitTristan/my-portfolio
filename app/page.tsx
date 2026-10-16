@@ -21,14 +21,6 @@ const jsonLd = {
   description: profile.description,
   url: profile.url,
   email: `mailto:${profile.email}`,
-  // Where Tristan lives today. profile.location already advertises the move
-  // to Nashville; change this once the move has actually happened.
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "St. Petersburg",
-    addressRegion: "FL",
-    addressCountry: "US",
-  },
   alumniOf: { "@type": "CollegeOrUniversity", name: education.school },
   sameAs: [profile.linkedin],
 };

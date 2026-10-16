@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowDownTrayIcon, MapPinIcon } from "@heroicons/react/20/solid";
+import { ArrowDownTrayIcon } from "@heroicons/react/20/solid";
 import { highlights, profile } from "../data/profile";
 import { LinkedInIcon } from "./icons";
 import SectionLink from "./SectionLink";
@@ -48,10 +48,6 @@ export default function Hero() {
             </div>
 
             <ul className="text-muted mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm">
-              <li className="flex items-center gap-x-2">
-                <MapPinIcon aria-hidden="true" className="size-4 flex-none" />
-                {profile.location}
-              </li>
               <li>
                 <a
                   href={profile.linkedin}

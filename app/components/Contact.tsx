@@ -1,4 +1,4 @@
-import { ArrowUpRightIcon, MapPinIcon } from "@heroicons/react/20/solid";
+import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
 import { profile } from "../data/profile";
 import { LinkedInIcon } from "./icons";
 import Section from "./Section";
@@ -29,13 +29,6 @@ export default function Contact() {
       <dl className="divide-hairline border-hairline mt-14 divide-y border-y">
         {/* Rows stack on phones, where a label and a full profile URL do not
             fit side by side. The value indents to line up with the label. */}
-        <div className={rowClass}>
-          <dt className="text-muted flex items-center gap-x-3 text-sm">
-            <MapPinIcon aria-hidden="true" className="size-5 flex-none" />
-            Location
-          </dt>
-          <dd className={valueClass}>{profile.location}</dd>
-        </div>
         <div className={rowClass}>
           <dt className="text-muted flex items-center gap-x-3 text-sm">
             <LinkedInIcon aria-hidden="true" className="size-5 flex-none" />

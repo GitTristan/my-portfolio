@@ -3,8 +3,6 @@ export const profile = {
   initials: "TP",
   title: "Full-Stack Developer & Cybersecurity Professional",
   tagline: "Building, securing, and managing reliable web applications.",
-  // Shown in the hero, the Contact section, and the social preview image.
-  location: "Relocating to Nashville, Tennessee",
   email: "tristan@parrish.work",
   // Canonical host for metadata and social previews. NEXT_PUBLIC_SITE_URL
   // overrides it, which is only useful for testing previews on another host.
@@ -14,7 +12,7 @@ export const profile = {
   // resume, replace that file and keep the name.
   resume: "/Tristan_Parrish_Resume.pdf",
   description:
-    "Full-stack developer and cybersecurity professional relocating to Nashville, Tennessee. Web applications, identity and access management, and application security.",
+    "Full-stack developer and cybersecurity professional working across web applications, identity and access management, and application security.",
   about: [
     "I'm a full-stack developer with a Bachelor's degree in Cybersecurity and professional experience spanning web application development, enterprise identity environments, technical troubleshooting, and systems integration.",
     "I currently run Parrish Design, where I design, develop, and deploy custom websites and full-stack web applications for businesses. My work ranges from high-performance business websites to complex SaaS applications incorporating authentication, databases, payment processing, content management systems, APIs, and serverless infrastructure.",
