@@ -85,13 +85,6 @@ export const projects: Project[] = [
           "Scheduling lives in Postgres, not in the Worker. Each source carries its own interval, sources are claimed with a lease, and a failed fetch is retried on a later tick.",
           "A daily check opens each source's live page and verifies that the form controls its connector depends on are still there, sending an alert when they are not.",
         ],
-        figures: [
-          {
-            description:
-              "Staff automation page showing ingestion health and recent fetch activity for each county source",
-            src: "/projects/permitfalcon/automation.jpg",
-          },
-        ],
       },
       {
         title: "The Permit Workspace",
