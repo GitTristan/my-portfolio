@@ -20,6 +20,8 @@ export const roles: Role[] = [
       "Integrate third-party APIs and cloud services based on application requirements.",
       "Develop SaaS and e-commerce functionality incorporating Stripe and PayPal payment processing.",
       "Implement database, authentication, CMS, API, and serverless functionality.",
+      "Build scheduled data imports, full-text search, and row level security on PostgreSQL for SaaS applications.",
+      "Implement validation, automated testing, monitoring, and CI/CD workflows using Zod, Vitest, Sentry, GitHub Actions, and Cloudflare Turnstile.",
       "Use AI-assisted development workflows to accelerate implementation and debugging while independently reviewing, testing, and validating production functionality.",
       "Manage production deployments, DNS, application configuration, third-party integrations, troubleshooting, and performance optimization.",
       "Develop projects ranging from high-performance business websites to complex SaaS web applications.",
